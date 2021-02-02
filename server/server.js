@@ -5,6 +5,11 @@ const express = require('express'); // if we don't do ./ it will assume it is a 
 const app = express();
 
 const port = 3000;
+
+// INCANTATION
+// Share any files inside the "./server/public" folder
+app.use(express.static('server/public'));
+
 // Listen for network requests.
 app.listen(port, function () {
   // When the server is ready, call this function
