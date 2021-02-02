@@ -10,3 +10,6 @@ app.listen(port, function () {
   // When the server is ready, call this function
   console.log('Listening on:', port);
 });
+// if you see a EADDRINUSE error,
+// run: killall -9 node
+// then try running node server code again.
