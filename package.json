@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BuriedinDreams/Learning-express-into/issues"
   },
-  "homepage": "https://github.com/BuriedinDreams/Learning-express-into#readme"
+  "homepage": "https://github.com/BuriedinDreams/Learning-express-into#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
