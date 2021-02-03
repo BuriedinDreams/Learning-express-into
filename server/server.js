@@ -29,5 +29,18 @@ app.listen(port, function () {
 app.get('/quotes', function (req, res) {
   console.log('GET Request for Quotes!');
   // res.send(quotes.getNextQuote());
-  res.send(quotes()); // this is saying it's a function | because it's retrieving the function() from the quotes.js
+  // res.send(quotes()); // this is saying it's a function | because it's retrieving the function() from the quotes.js
+  res.send(quotes.getNextQuote());
+});
+
+app.post('/quotes', (req, res) => {
+  // posts are METHODS used to "post" something
+  let quote = req.body.quote_to_add; //
+  console.log(quote.author);
+  console.log(quote.quote);
+
+  // TODO: Add to quotesData.
+  quotes.addQuote(quote);
+  // TODO: Respond with something!
+  res.sendStatus(200);
 });
