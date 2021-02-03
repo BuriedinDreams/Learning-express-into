@@ -17,7 +17,7 @@ function onReady() {
   let ajaxOptions = {
     url: '/allTheQuotes',
     method: 'GET',
-  };
+  }; // this basically retrieving data from server.js file on app.get/allTheQuotes
 
   // You might also see this out in the wild.
   // $.ajax(ajaxOptions = {
@@ -27,11 +27,24 @@ function onReady() {
 
   $.ajax(ajaxOptions) // this needs to be in the onReady func | don't have ";" in this spot. because .then needs to piggyback off of this.
     //Promise
-    .then(function (response) {
-      console.log('got a response', response);
+    .then(function (quoteList) {
+      // this is original name response,
+      console.log('got a response', quoteList);
+
+      for (let quote of quoteList) {
+        console.log(quote);
+        $('#quotesList').append(`
+        <li>
+        <blockquote>
+        ${quote.quote} - 
+        ${quote.author} 
+        </blockquote>
+      </li>
+        `);
+      }
     });
 
   // Take array of quotes
-  // loop d' loop through em
+  // loop d' loop through em'
   // and .append() to the DOM
 }
