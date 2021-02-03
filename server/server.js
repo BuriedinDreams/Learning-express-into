@@ -33,14 +33,37 @@ app.get('/quotes', function (req, res) {
   res.send(quotes.getNextQuote());
 });
 
+app.get('/allTheQuotes', function (req, res) {
+  console.log('GET / alltheQuotes');
+
+  // Send back the entire list of quotes
+  res.send(quotes.quoteList);
+});
+/*
+
+
+
+
+*/
+
+// PostMan
+
+// {
+//   "favorite_food": {
+//       "author": "Myself",
+//       "quote": "My favorite food is ChineseOrangeChicken"
+//   }
+// }
+
+// POST / quotes endpoint
 app.post('/quotes', (req, res) => {
   // posts are METHODS used to "post" something
-  let quote = req.body.quote_to_add; //
+  let quote = req.body.quote_to_add; // req.body.favorite_food -- this therefore needs to match on Postman
   console.log(quote.author);
   console.log(quote.quote);
 
   // TODO: Add to quotesData.
   quotes.addQuote(quote);
   // TODO: Respond with something!
-  res.sendStatus(200);
+  res.sendStatus(200); // sends back "A-OK"
 });

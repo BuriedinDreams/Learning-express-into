@@ -49,6 +49,10 @@ function addQuote(quoteData) {
   return true;
 }
 
-module.exports = { getNextQuote, addQuote }; //
+module.exports = {
+  getNextQuote: getNextQuote,
+  addQuote: addQuote,
+  quoteList: quotesData,
+}; // getNextQuote: getNExtQuote
 
 //                 getNextQuote: getNex
