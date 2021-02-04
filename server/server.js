@@ -6,7 +6,7 @@ const quotes = require('./modules/quotes');
 // const bodyParser = require('body-parser') // old usage of code now used in express
 
 // Create our application
-const app = express();
+const app = express(); // remember to have app = blah before ... app.use()
 
 const port = 3000;
 
@@ -39,15 +39,8 @@ app.get('/allTheQuotes', function (req, res) {
   // Send back the entire list of quotes
   res.send(quotes.quoteList);
 });
-/*
-
-
-
-
-*/
 
 // PostMan
-
 // {
 //   "favorite_food": {
 //       "author": "Myself",
@@ -62,7 +55,7 @@ app.post('/quotes', (req, res) => {
   console.log(quote.author);
   console.log(quote.quote);
 
-  // TODO: Add to quotesData.
+  // TODO: Add to quotesData. | add the new quote to the list of quotes
   quotes.addQuote(quote);
   // TODO: Respond with something!
   res.sendStatus(200); // sends back "A-OK"
